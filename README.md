@@ -1,70 +1,69 @@
 # markdown-parser
 
-> A Python utility for parsing Markdown text into HTML.
+A simple Markdown parser for Python
 
-## Overview
+This utility takes Markdown text as input and outputs HTML. It supports common elements like headings, bold text, italics, and lists.
 
-markdown-parser is a Python utility designed to parse Markdown text into HTML. This project addresses the need for a reliable and efficient Markdown parser, enabling developers to convert Markdown-formatted text into visually appealing HTML. The parser supports common Markdown elements such as headings, bold text, italics, and lists, making it a valuable tool for developers, writers, and content creators.
+## What it does
 
-## Features
+I needed a quick way to convert Markdown text to HTML, so I wrote this parser. It's a single-purpose tool that gets the job done.
 
-- **Markdown Support**: Parse Markdown text into HTML with support for headings, bold text, italics, and lists.
-- **Efficient Parsing**: Fast and efficient parsing of Markdown text, minimizing processing overhead.
-- **Configurable**: Customize parsing behavior to suit specific requirements.
-- **Extensive Testing**: Thoroughly tested to ensure reliability and accuracy.
-- **Pythonic API**: Simple and intuitive API for easy integration into Python applications.
-- **Cross-Platform**: Works seamlessly on multiple platforms and operating systems.
-- **Open-Source**: Community-driven development and contributions welcome.
+## Install
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.8 or later
-- pip package manager
-
-### Installation
-
+You can install it using pip:
 ```bash
 pip install markdown-parser
 ```
 
-### Usage
+## Usage
 
-```bash
-# Parse Markdown text into HTML
-import markdown_parser
+To use the parser, call the `parse` function with your Markdown text as an argument:
+```python
+from markdown_parser import parse
+
 markdown_text = "# Heading\n## Subheading\nThis is a paragraph."
-html_output = markdown_parser.parse(markdown_text)
-print(html_output)
+html = parse(markdown_text)
+print(html)
 ```
 
-## Architecture
+## Build from Source
 
-markdown-parser is structured into three primary components:
-
-- `src/main.py`: The main entry point for the Markdown parser.
-- `src/markdown_parser.py`: Implementation of the Markdown parser.
-- `tests/test_markdown_parser.py`: Unit tests for the Markdown parser.
-
-## API Reference
-
-markdown-parser exposes a simple and intuitive API for parsing Markdown text into HTML. The primary function is `parse(markdown_text)`, which takes a Markdown-formatted string as input and returns the corresponding HTML output.
-
-## Testing
-
+To build from source, clone the repository and run:
 ```bash
-# Run unit tests
-python -m unittest tests.test_markdown_parser
+python setup.py install
 ```
 
-## Contributing
+## Run Tests
 
-1. Fork the repository
-2. Create a feature branch (`git branch feature/new-feature`)
-3. Commit changes (`git add . && git commit -m "New feature description"`)
-4. Push and open a PR (`git push origin feature/new-feature`)
+The parser has a test suite. You can run it using:
+```bash
+python -m unittest discover
+```
+
+## Project Structure
+
+* `markdown_parser.py`: The main parser function
+* `test_markdown_parser.py`: The test suite
+* `setup.py`: The build script
 
 ## License
 
-markdown-parser is licensed under the MIT License.
+Copyright (c) 2026 SamyAlderson
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
